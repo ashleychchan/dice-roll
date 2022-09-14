@@ -13,4 +13,11 @@ const button = document.getElementById('button');
 button.onclick = function() {
   let result = die.roll();
   printResult(result);
-};
+}
+
+function twoDice(){
+    const newElement = document.createElement("h2");
+    newElement.innerHTML = "CONTENTS";
+    rollResult.appendChild(newElement); 
+  
+}

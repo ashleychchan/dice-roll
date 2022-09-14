@@ -5,4 +5,13 @@ html, body *{
 }
 body{
     background-color: #C6C5B9;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    margin-top: 10rem;
+}
+button{
+    width: 5rem;
 }
