@@ -1,3 +1,7 @@
+const oneButton= document.getElementById("dice");
+const twoButton= document.getElementById("die");
+const rollResult= document.getElementById('rollResult');
+const second= document.getElementById("second");
 const die= {
     numbers: 6, 
     roll: function () {
@@ -5,7 +9,7 @@ const die= {
         return random;
 }}
 function printResult(number){
-    let rollResult= document.getElementById('rollResult');
+    
     rollResult.innerHTML= number;
 }
 
@@ -17,7 +21,14 @@ button.onclick = function() {
 
 function twoDice(){
     const newElement = document.createElement("h2");
+    newElement.id= "second"
     newElement.innerHTML = "CONTENTS";
     rollResult.appendChild(newElement); 
-  
+    oneButton.disabled= true;
+    twoButton.disabled = false;
+}
+function oneDie(){
+    second.remove("second"); 
+    oneButton.disabled= false;
+    twoButton.disabled= true;
 }
