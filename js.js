@@ -5,11 +5,11 @@ const rollResult= document.getElementById('rollResult');
 const die= {
     numbers: 6, 
     roll: function () {
+        console.log("this works");
         let random = Math.floor(Math.random() * this.numbers) + 1;
         return random;
 }}
 function roll() {
-    console.log("this works");
     let random = Math.floor(Math.random() * this.numbers) + 1;
     return random;
 }
