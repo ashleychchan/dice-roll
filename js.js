@@ -1,5 +1,6 @@
 const oneButton = document.getElementById("dice");
 const twoButton = document.getElementById("die");
+const past = document.getElementById("past");
 const rollResult = document.getElementById("rollResult");
 
 const die = {
@@ -16,34 +17,29 @@ const die = {
     return results;
   },
 };
-
+let pastRolls = [];
 function printResult(number) {
+  console.log(pastRolls);
   rollResult.innerHTML = number;
   /*   second.innerHTML = number; */
 }
-
-function twoDice() {
-  /*   const newElement = document.createElement("h2");
-  newElement.id = "second";
-  newElement.innerHTML = "dice";
-  rollResult.appendChild(newElement);
-  const second = document.getElementById("second");
-  second.addEventListener("click", roll);
-  oneButton.disabled = true;
-  twoButton.disabled = false; */
+function printPast(pastRolls) {
+  past.innerHTML = pastRolls;
+  /*   second.innerHTML = number; */
 }
 twoButton.onclick = function () {
   let result = die.roll();
   printResult(result);
-  console.log(result);
+  pastRolls.push(result);
+  printPast(pastRolls);
 };
-function oneDie() {
-  /*  const second = document.getElementById("second");
-  second.remove("second");
-  oneButton.disabled = false;
-  twoButton.disabled = true; */
-}
+
 oneButton.onclick = function () {
   let result = die.roll2();
   printResult(result);
+  pastRolls.push(result);
+  printPast(pastRolls);
 };
+
+pastRolls.push(result);
+printPast(numbers);
