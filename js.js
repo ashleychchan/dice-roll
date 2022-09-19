@@ -21,17 +21,17 @@ let pastRolls = [];
 function printResult(number) {
   console.log(pastRolls);
   rollResult.innerHTML = number;
-  /*   second.innerHTML = number; */
+
 }
-function printPast(pastRolls) {
+function printPast() {
   past.innerHTML = pastRolls;
-  /*   second.innerHTML = number; */
 }
 twoButton.onclick = function () {
   let result = die.roll();
   printResult(result);
   pastRolls.push(result);
   printPast(pastRolls);
+ 
 };
 
 oneButton.onclick = function () {
@@ -41,5 +41,6 @@ oneButton.onclick = function () {
   printPast(pastRolls);
 };
 
-pastRolls.push(result);
-printPast(numbers);
+pastRolls.forEach(roll => {
+   past.insertAdjacentElement("beforebegin", `<p>${roll}</p>`)
+});
