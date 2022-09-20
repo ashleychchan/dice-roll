@@ -2,6 +2,14 @@ const oneButton = document.getElementById("dice");
 const twoButton = document.getElementById("die");
 const past = document.getElementById("past");
 const rollResult = document.getElementById("rollResult");
+let images = [
+  "./img/1.svg",
+  "./img/2.svg",
+  "./img/3.svg",
+  "./img/4.svg",
+  "./img/5.svg",
+  "./img/6.svg",
+];
 
 const die = {
   numbers: 6,
@@ -29,7 +37,9 @@ twoButton.onclick = function () {
   let result = die.roll();
   printResult(result);
   pastRolls.push(result);
+  rollResult.setAttribute("src", images[random]);
   printPast(pastRolls);
+  console.log(rollResult);
 };
 
 oneButton.onclick = function () {
