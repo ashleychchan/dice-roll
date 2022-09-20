@@ -21,7 +21,6 @@ let pastRolls = [];
 function printResult(number) {
   console.log(pastRolls);
   rollResult.innerHTML = number;
-
 }
 function printPast() {
   past.innerHTML = pastRolls;
@@ -31,7 +30,6 @@ twoButton.onclick = function () {
   printResult(result);
   pastRolls.push(result);
   printPast(pastRolls);
- 
 };
 
 oneButton.onclick = function () {
@@ -41,6 +39,6 @@ oneButton.onclick = function () {
   printPast(pastRolls);
 };
 
-pastRolls.forEach(roll => {
-   past.insertAdjacentElement("beforebegin", `<p>${roll}</p>`)
+pastRolls.forEach((roll) => {
+  past.insertAdjacentElement("beforebegin", `<p>${roll}</p>`);
 });
