@@ -2,7 +2,10 @@ const oneButton = document.getElementById("dice");
 const twoButton = document.getElementById("die");
 const past = document.getElementById("past");
 const rollResult = document.getElementById("rollResult");
+const rollResult2 = document.getElementById("rollResult2");
+const rollResult3 = document.getElementById("rollResult3");
 let images = [
+  // "./img/1.svg",
   "./img/1.svg",
   "./img/2.svg",
   "./img/3.svg",
@@ -27,7 +30,6 @@ const die = {
 };
 let pastRolls = [];
 function printResult(number) {
-  console.log(pastRolls);
   rollResult.innerHTML = number;
 }
 function printPast() {
@@ -37,9 +39,8 @@ twoButton.onclick = function () {
   let result = die.roll();
   printResult(result);
   pastRolls.push(result);
-  rollResult.setAttribute("src", images[random]);
   printPast(pastRolls);
-  console.log(rollResult);
+  rollResult.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
 };
 
 oneButton.onclick = function () {
@@ -47,6 +48,8 @@ oneButton.onclick = function () {
   printResult(result);
   pastRolls.push(result);
   printPast(pastRolls);
+  rollResult.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
+  console.log(images[pastRolls[pastRolls.length - 1] - 1])
 };
 
 pastRolls.forEach((roll) => {
