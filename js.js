@@ -25,7 +25,7 @@ const die = {
   roll2: function () {
     let results = [];
     do {
-      results.push(die.roll(6));
+      results.push(this.roll(6));
     } while (results.length < 2);
     return results;
   },
@@ -57,18 +57,11 @@ oneButton.onclick = function () {
   printResult(result);
   pastRolls.push(result);
   printPast(pastRolls);
-  rollResult.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
-  console.log(images[pastRolls[pastRolls.length - 1] - 1]);
+  rollResult2.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
+  console.log(images[pastRolls[pastRolls.length[0]]]);
+  /* 
+  console.log(images[pastRolls[pastRolls.length[0]]]); */
   rollResult.style.display = "none";
   rollResult2.style.display = "block";
   rollResult3.style.display = "block";
-
-  /*   if (rollResult2.style.display === "block") {
-    rollResult2.style.display = "none";
-    rollResult3.style.display = "none";
-  } */
 };
-
-pastRolls.forEach((roll) => {
-  past.insertAdjacentElement("beforebegin", `<p>${roll}</p>`);
-});
