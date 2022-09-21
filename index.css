@@ -66,10 +66,12 @@ h1{
    margin-bottom: 2rem;
     font-size: 6rem;
 }
+.roll2{
+  background-color: red;
+ display: ;
+}
+
 img{
     height: 9rem;
     width: 9rem;
-}
-.1roll{
-    display: none;
 }
