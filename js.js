@@ -4,6 +4,8 @@ const past = document.getElementById("past");
 const rollResult = document.getElementById("rollResult");
 const rollResult2 = document.getElementById("rollResult2");
 const rollResult3 = document.getElementById("rollResult3");
+const hide1 = document.getElementsByClassName("1roll");
+const hide2 = document.getElementsByClassName("2roll");
 let images = [
   // "./img/1.svg",
   "./img/1.svg",
@@ -41,6 +43,16 @@ twoButton.onclick = function () {
   pastRolls.push(result);
   printPast(pastRolls);
   rollResult.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
+  if (hide2.style.display === "none") {
+    hide2.style.display = "block";
+  } else {
+    hide2.style.display = "none";
+  }
+  /*   if (hide2.style.display !== "none") {
+    hide2.style.display = "none";
+  } else {
+    hide2.style.display = "block";
+  } */
 };
 
 oneButton.onclick = function () {
@@ -49,7 +61,7 @@ oneButton.onclick = function () {
   pastRolls.push(result);
   printPast(pastRolls);
   rollResult.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
-  console.log(images[pastRolls[pastRolls.length - 1] - 1])
+  console.log(images[pastRolls[pastRolls.length - 1] - 1]);
 };
 
 pastRolls.forEach((roll) => {
