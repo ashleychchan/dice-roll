@@ -4,8 +4,8 @@ const past = document.getElementById("past");
 const rollResult = document.getElementById("rollResult");
 const rollResult2 = document.getElementById("rollResult2");
 const rollResult3 = document.getElementById("rollResult3");
-const hide1 = document.getElementsByClassName("roll1");
-const hide2 = document.getElementsByClassName("roll2");
+const hide1 = document.querySelector(".roll1");
+const hide2 = document.querySelector(".roll2");
 let images = [
   // "./img/1.svg",
   "./img/1.svg",
@@ -43,9 +43,10 @@ twoButton.onclick = function () {
   pastRolls.push(result);
   printPast(pastRolls);
   rollResult.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
-  rollResult.style.display = "block";
-  rollResult2.style.display = "none";
-  rollResult3.style.display = "none";
+  console.log(hide1)
+  hide2.classList.add("hide");
+  hide1.classList.remove("hide");
+  // rollResult3.style.display = "none";
   /*   if (rollResult2.style.display === "none") {
     rollResult2.style.display = "block";
     rollResult3.style.display = "block";
@@ -58,10 +59,13 @@ oneButton.onclick = function () {
   pastRolls.push(result);
   printPast(pastRolls);
   rollResult2.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
-  console.log(images[pastRolls[pastRolls.length[0]]]);
+  hide1.classList.add("hide");
+  hide2.classList.remove("hide");
+  console.log(images[pastRolls[pastRolls.length[0]] - 1]);
+  console.log(pastRolls.length)
   /* 
   console.log(images[pastRolls[pastRolls.length[0]]]); */
-  rollResult.style.display = "none";
+  /* rollResult.style.display = "none";
   rollResult2.style.display = "block";
-  rollResult3.style.display = "block";
+  rollResult3.style.display = "block"; */
 };

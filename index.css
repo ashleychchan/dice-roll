@@ -66,11 +66,15 @@ h1{
    margin-bottom: 2rem;
     font-size: 6rem;
 }
-.roll2{
+/* .roll2{
 
-}
+} */
 
 img{
     height: 9rem;
     width: 9rem;
+}
+
+.hide {
+  display: none;
 }
