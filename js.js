@@ -43,14 +43,9 @@ twoButton.onclick = function () {
   pastRolls.push(result);
   printPast(pastRolls);
   rollResult.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
-  console.log(hide1)
+  console.log(hide1);
   hide2.classList.add("hide");
   hide1.classList.remove("hide");
-  // rollResult3.style.display = "none";
-  /*   if (rollResult2.style.display === "none") {
-    rollResult2.style.display = "block";
-    rollResult3.style.display = "block";
-  } */
 };
 
 oneButton.onclick = function () {
@@ -58,14 +53,14 @@ oneButton.onclick = function () {
   printResult(result);
   pastRolls.push(result);
   printPast(pastRolls);
-  rollResult2.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
   hide1.classList.add("hide");
   hide2.classList.remove("hide");
-  console.log(images[pastRolls[pastRolls.length[0]] - 1]);
-  console.log(pastRolls.length)
-  /* 
-  console.log(images[pastRolls[pastRolls.length[0]]]); */
-  /* rollResult.style.display = "none";
-  rollResult2.style.display = "block";
-  rollResult3.style.display = "block"; */
+  rollResult2.setAttribute(
+    "src",
+    images[pastRolls[pastRolls.length - 1][0] - 1]
+  );
+  rollResult3.setAttribute(
+    "src",
+    images[pastRolls[pastRolls.length - 1][1] - 1]
+  );
 };
