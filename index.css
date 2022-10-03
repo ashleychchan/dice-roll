@@ -84,5 +84,9 @@ img{
   margin: 2rem;
 }
 #rollResult{
-  margin: 2rem;
+  margin-top: 2rem;
+  
+}
+#rollResultText2{
+  margin: 0;
 }

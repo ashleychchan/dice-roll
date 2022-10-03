@@ -4,6 +4,8 @@ const past = document.getElementById("past");
 const rollResult = document.getElementById("rollResult");
 const rollResult2 = document.getElementById("rollResult2");
 const rollResult3 = document.getElementById("rollResult3");
+const rollResultText = document.getElementById("rollResultText");
+const rollResultText2 = document.getElementById("rollResultText2");
 const hide1 = document.querySelector(".roll1");
 const hide2 = document.querySelector(".roll2");
 let images = [
@@ -15,7 +17,7 @@ let images = [
   "./img/5.svg",
   "./img/6.svg",
 ];
-
+let pastRolls = [];
 const die = {
   numbers: 6,
   roll: function () {
@@ -30,12 +32,27 @@ const die = {
     return results;
   },
 };
-let pastRolls = [];
 function printResult(number) {
-  rollResult.innerHTML = number;
+  if (number == "6") {
+    rollResultText2.insertAdjacentHTML(
+      "afterend",
+      "<p>you rolled the devils number! </p>"
+    );
+    console.log(rollResultText2.innerHTML);
+  } else if (number == "4") {
+    rollResultText2.insertAdjacentHTML(
+      "afterend",
+      "<p>did you know 4 in chinese means death? </p> "
+    );
+  } else {
+    rollResultText2.innerHTML = "";
+    console.log(rollResultText2.innerText);
+  }
+  rollResultText2.innerHTML = number;
 }
 function printPast() {
-  past.innerHTML = pastRolls;
+  let singlePast = pastRolls[[pastRolls.length - 1]] + ",";
+  past.insertAdjacentHTML("beforebegin", singlePast);
 }
 twoButton.onclick = function () {
   let result = die.roll();
@@ -43,7 +60,6 @@ twoButton.onclick = function () {
   pastRolls.push(result);
   printPast(pastRolls);
   rollResult.setAttribute("src", images[pastRolls[pastRolls.length - 1] - 1]);
-  console.log(hide1);
   hide2.classList.add("hide");
   hide1.classList.remove("hide");
 };
